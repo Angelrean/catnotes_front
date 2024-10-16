@@ -1,9 +1,9 @@
 ion-content {
     --background: linear-gradient(180deg, rgba(17, 0, 255, 0) 0%, rgba(103, 57, 190, 0.38) 23.3%, rgba(102, 27, 241, 0.69) 61.8%, #6739BE 91.8%);
-    
+
   }
 
-  //esta es para modificar las propiedades de la card 
+  //esta es para modificar las propiedades de la card
   .login-card {
     background-color: #D5C1FE;
     border-radius: 0% 0% 0% 0%;
@@ -36,7 +36,7 @@ ion-content {
     border-radius: 50%;
     width: 262px;
     height: 262px;
-    margin-top: 94px;    
+    margin-top: 94px;
   }
 
   //aca estan las propiedades 'propias' de la imagen, solo lo puese para adaptar el tamaño
@@ -64,4 +64,11 @@ ion-input{
   }
   a{
     color: #D900FF;
+  }
+
+
+
+  .google{
+
+    margin-top: 1rem !important;
   }

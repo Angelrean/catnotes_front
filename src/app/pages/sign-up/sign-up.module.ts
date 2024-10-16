@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import {ComponentsModule } from '../comonents/components.module' ;
+import {ComponentsModule } from '../../components/components.module' ;
 
 import { IonicModule } from '@ionic/angular';
 

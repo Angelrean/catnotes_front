@@ -2,10 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
+
   {
     path: '',
     redirectTo: 'sign-up',
@@ -13,15 +10,15 @@ const routes: Routes = [
   },
   {
     path: 'calendar',
-    loadChildren: () => import('./calendar/calendar.module').then( m => m.CalendarPageModule)
+    loadChildren: () => import('./pages/calendar/calendar.module').then( m => m.CalendarPageModule)
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'sign-up',
-    loadChildren: () => import('./sign-up/sign-up.module').then( m => m.SignUpPageModule)
+    loadChildren: () => import('./pages/sign-up/sign-up.module').then( m => m.SignUpPageModule)
   },
 ];
 
