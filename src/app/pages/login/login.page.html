@@ -1,0 +1,38 @@
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <div class="card-header">
+      <img src="assets/gato_nariz_morada.svg">
+    </div>
+  </div>
+  <ion-card class='login-card'>
+    <ion-card-header>
+      <h1>CatNote</h1>
+      <h1>LOGIN</h1>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-input label="Email or username" labelPlacement="floating" type="Enter text"></ion-input>
+
+      <ion-input label="Password" labelPlacement="floating" type="password">
+      </ion-input>
+      <ion-button shape="round"> login </ion-button>
+
+
+
+      <p>You don´t have an account?<a routerLink="/sign-up"> Sign up now</a></p>
+
+      <div class="pt-3">
+
+        <p >Or sign up with:</p>
+
+        <ion-button class="google" (click)="login()">
+          <ion-icon name="logo-google"></ion-icon>
+          Google
+        </ion-button>
+
+      </div>
+
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

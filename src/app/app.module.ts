@@ -9,10 +9,12 @@ import { AppRoutingModule } from './app-routing.module';
 
 
 import { FormControl } from '@angular/forms';
+import {  OAuthModule, OAuthService } from 'angular-oauth2-oidc';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, OAuthModule.forRoot(), HttpClientModule ],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, OAuthService, HttpClient],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
