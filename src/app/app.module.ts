@@ -11,6 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormControl } from '@angular/forms';
 import {  OAuthModule, OAuthService } from 'angular-oauth2-oidc';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, OAuthModule.forRoot(), HttpClientModule ],

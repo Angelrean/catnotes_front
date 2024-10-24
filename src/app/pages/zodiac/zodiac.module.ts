@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { ComponentsModule } from 'src/app/components/components.module';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CalendarPageRoutingModule } from './calendar-routing.module';
+import { ComponentsModule } from 'src/app/components/components.module';
+import { ZodiacPageRoutingModule } from './zodiac-routing.module';
 
-import { CalendarPage } from './calendar.page';
+import { ZodiacPage } from './zodiac.page';
 
 @NgModule({
   imports: [
@@ -16,8 +15,8 @@ import { CalendarPage } from './calendar.page';
     FormsModule,
     IonicModule,
     ComponentsModule,
-    CalendarPageRoutingModule
+    ZodiacPageRoutingModule,
   ],
-  declarations: [CalendarPage]
+  declarations: [ZodiacPage]
 })
-export class CalendarPageModule {}
+export class ZodiacPageModule {}
