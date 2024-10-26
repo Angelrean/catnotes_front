@@ -10,7 +10,7 @@ export class LoginPage implements OnInit {
 
   constructor(private authGoogleService: AuthGoogleService) {
     this.authGoogleService.initLogin();
-   }
+  }
 
   ngOnInit() {
   }

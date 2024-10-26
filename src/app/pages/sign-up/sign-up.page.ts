@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthGoogleService } from 'src/app/services/auth-google.service';
 
 
 @Component({
@@ -10,9 +11,14 @@ import { Component } from '@angular/core';
 
 export class SignUpPage {
 
+  constructor(private readonly authGoogleService: AuthGoogleService) {
+    this.authGoogleService.initLogin();
+   }
+  register():void{
+    this.authGoogleService.login();
 
-  constructor() { }
+  }
 
-  
 
 }
+

@@ -32,6 +32,16 @@ export class AuthGoogleService {
 
   login():void{
     this.oAuthService.initLoginFlow();
+    this.oAuthService.loadDiscoveryDocumentAndTryLogin().then(() => {
+      this.oAuthService.loadUserProfile().then(user => {
+        console.log('Perfil del usuario:', user);
+      });
+    }).catch(error => {
+
+      console.error('Error al obtener el perfil:', error);
+    });
+    let profile: Record<string, any> = this.getProfile();
+    console.table(profile)
   }
 
 

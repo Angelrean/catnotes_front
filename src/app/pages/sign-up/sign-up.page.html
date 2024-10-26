@@ -14,7 +14,16 @@
 
       <ion-text>
         <p>Do you already have an account? <a routerLink="/login"> Login here</a></p>
+        <div class="pt-3">
 
+          <p >Or sign up with:</p>
+
+          <ion-button class="google" (click)="register()">
+            <ion-icon name="logo-google"></ion-icon>
+            Google
+          </ion-button>
+
+        </div>
       </ion-text>
 
 
