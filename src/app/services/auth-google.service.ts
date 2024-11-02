@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AuthConfig, OAuthService } from 'angular-oauth2-oidc';
+import { environment } from '../../environments/environment';
 
 
 @Injectable({
@@ -7,51 +8,38 @@ import { AuthConfig, OAuthService } from 'angular-oauth2-oidc';
 })
 export class AuthGoogleService {
 
-  constructor(private oAuthService: OAuthService) {
-
+  constructor(private oauthService: OAuthService) {
+    this.initLogin();
 
 
   }
 
 
   initLogin(): void{
-    const config: AuthConfig={
-      issuer: 'https://accounts.google.com',
-      strictDiscoveryDocumentValidation: false,
-      clientId: '512339523442-2f7kre2vcijsldq4n30t56fo8jlvsfjd.apps.googleusercontent.com',
-      redirectUri: window.location.origin+ "/calendar",
-      scope: 'openid profile email',
-    }
+    console.log('initializing');
 
-    this.oAuthService.configure(config);
+    const config: AuthConfig=environment.auth_config
 
+    this.oauthService.configure(config);
+    this.oauthService.setupAutomaticSilentRefresh();
+    this.oauthService.loadDiscoveryDocumentAndTryLogin();
+    console.log(this.oauthService);
 
-    this.oAuthService.setupAutomaticSilentRefresh();
-    this.oAuthService.loadDiscoveryDocumentAndTryLogin();
   }
 
   login():void{
-    this.oAuthService.initLoginFlow();
-    this.oAuthService.loadDiscoveryDocumentAndTryLogin().then(() => {
-      this.oAuthService.loadUserProfile().then(user => {
-        console.log('Perfil del usuario:', user);
-      });
-    }).catch(error => {
+    this.oauthService.initLoginFlow();
 
-      console.error('Error al obtener el perfil:', error);
-    });
-    let profile: Record<string, any> = this.getProfile();
-    console.table(profile)
   }
 
 
   logout():void{
-    this.oAuthService.logOut();
+    this.oauthService.logOut();
   }
 
 
   getProfile(): Record<string, any> {
-    return this.oAuthService.getIdentityClaims();
+    return this.oauthService.getIdentityClaims();
   }
 
 

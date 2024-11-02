@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { AuthGoogleService } from 'src/app/services/auth-google.service';
+import { CookieService } from '../../services/cookie.service';
 
 @Component({
   selector: 'app-calendar',
@@ -9,13 +10,17 @@ import { AuthGoogleService } from 'src/app/services/auth-google.service';
 })
 export class CalendarPage implements OnInit {
 
-  constructor(private authGoogleService: AuthGoogleService, private router: Router) { }
+  constructor(
+    private readonly authGoogleService: AuthGoogleService,
+    private readonly router: Router,
+    private readonly cookieService: CookieService
+  ) { }
 
   ngOnInit() {
 
-    let profile = this.authGoogleService.getProfile()
+    const token = this.cookieService.getToken();
 
-    console.table(profile);
+    console.table(token);
   }
 
   logout():void{
