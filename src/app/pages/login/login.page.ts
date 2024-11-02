@@ -63,6 +63,8 @@ export class LoginPage  {
 
   //#region  Login con Google
   loginWithGoogle():void{
+    console.log("click");
+
     this.authGoogleService.login();
   }
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AuthConfig, OAuthService } from 'angular-oauth2-oidc';
-import { environment } from '../../environments/environment';
+import { environment } from '../../environments/environment.prod';
 
 
 @Injectable({
@@ -8,38 +8,33 @@ import { environment } from '../../environments/environment';
 })
 export class AuthGoogleService {
 
-  constructor(private oauthService: OAuthService) {
-    this.initLogin();
+  constructor(private oAuthService: OAuthService) {
+    this.initLogin()
 
 
   }
 
 
   initLogin(): void{
-    console.log('initializing');
-
     const config: AuthConfig=environment.auth_config
 
-    this.oauthService.configure(config);
-    this.oauthService.setupAutomaticSilentRefresh();
-    this.oauthService.loadDiscoveryDocumentAndTryLogin();
-    console.log(this.oauthService);
-
+    this.oAuthService.configure(config);
+    this.oAuthService.setupAutomaticSilentRefresh();
+    this.oAuthService.loadDiscoveryDocumentAndTryLogin();
   }
 
   login():void{
-    this.oauthService.initLoginFlow();
-
+    this.oAuthService.initLoginFlow();
   }
 
 
   logout():void{
-    this.oauthService.logOut();
+    this.oAuthService.logOut();
   }
 
 
   getProfile(): Record<string, any> {
-    return this.oauthService.getIdentityClaims();
+    return this.oAuthService.getIdentityClaims();
   }
 
 

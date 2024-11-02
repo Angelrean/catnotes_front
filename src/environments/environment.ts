@@ -8,7 +8,7 @@ export const environment = {
   auth_config: {
     issuer: 'https://accounts.google.com',
     strictDiscoveryDocumentValidation: false,
-    clientId: '512339523442-j64ti20gb98ne55lrbpmmrtpcsi1mghn.apps.googleusercontent.com',
+    clientId: '512339523442-2f7kre2vcijsldq4n30t56fo8jlvsfjd.apps.googleusercontent.com',
     redirectUri: window.location.origin+ "/calendar",
     scope: 'openid profile email',
   }
