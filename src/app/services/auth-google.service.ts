@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AuthConfig, OAuthService } from 'angular-oauth2-oidc';
+import { environment } from '../../environments/environment.prod';
 
 
 @Injectable({
@@ -8,24 +9,16 @@ import { AuthConfig, OAuthService } from 'angular-oauth2-oidc';
 export class AuthGoogleService {
 
   constructor(private oAuthService: OAuthService) {
-
+    this.initLogin()
 
 
   }
 
 
   initLogin(): void{
-    const config: AuthConfig={
-      issuer: 'https://accounts.google.com',
-      strictDiscoveryDocumentValidation: false,
-      clientId: '512339523442-2f7kre2vcijsldq4n30t56fo8jlvsfjd.apps.googleusercontent.com',
-      redirectUri: window.location.origin+ "/calendar",
-      scope: 'openid profile email',
-    }
+    const config: AuthConfig=environment.auth_config
 
     this.oAuthService.configure(config);
-
-
     this.oAuthService.setupAutomaticSilentRefresh();
     this.oAuthService.loadDiscoveryDocumentAndTryLogin();
   }

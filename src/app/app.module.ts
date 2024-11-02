@@ -8,13 +8,24 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 
-import { FormControl } from '@angular/forms';
-import {  OAuthModule, OAuthService } from 'angular-oauth2-oidc';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { OAuthModule, OAuthService } from 'angular-oauth2-oidc';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './Interceptors/auth.interceptor';
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, OAuthModule.forRoot(), HttpClientModule ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, OAuthService, HttpClient],
+  imports: [BrowserModule,
+    IonicModule.forRoot(),
+    FormsModule,
+    AppRoutingModule,
+    OAuthModule.forRoot(),
+    HttpClientModule ],
+  providers: [{
+    provide: RouteReuseStrategy,
+    useClass: IonicRouteStrategy},
+    OAuthService,
+    HttpClient,
+  {provide: HTTP_INTERCEPTORS , useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
