@@ -4,7 +4,6 @@ import { User } from '../../interfaces/user';
 import { UserService } from '../../services/user.service';
 import { AlertController } from "@ionic/angular";
 
-import Cookies from 'js-cookie';
 import { CookieService } from '../../services/cookie.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -42,12 +41,17 @@ export class LoginPage  {
       password: this.password ?? undefined,
     };
 
+    console.log(user);
+
     this.userService.login(user)
       .subscribe(
         {
           next: (resp: any) => {
             this.cookieService.setToken(resp.token);
-            this.router.navigate(['/'])
+            this.router.navigate(["/"])
+
+
+
 
           },
           error: (error: any) => {

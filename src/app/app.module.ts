@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
+import { RouteReuseStrategy, RouterModule } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { OAuthModule, OAuthService } from 'angular-oauth2-oidc';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './Interceptors/auth.interceptor';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule,
@@ -19,7 +20,13 @@ import { AuthInterceptor } from './Interceptors/auth.interceptor';
     FormsModule,
     AppRoutingModule,
     OAuthModule.forRoot(),
-    HttpClientModule ],
+    HttpClientModule],
+
+  exports: [
+
+    RouterModule
+  ],
+
   providers: [{
     provide: RouteReuseStrategy,
     useClass: IonicRouteStrategy},
