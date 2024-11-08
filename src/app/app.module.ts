@@ -14,6 +14,7 @@ import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common
 import { AuthInterceptor } from './Interceptors/auth.interceptor';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule,
