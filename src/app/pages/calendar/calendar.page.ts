@@ -17,17 +17,8 @@ export class CalendarPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    const token = this.cookieService.getToken();
-    // if (!token) {
-    //   this.router.navigate(['/login']);
-    //   return; // Exit the function if no token is found
-    // }
+    console.log("hola");
 
-    // Rest of your code that relies on user data or token
-    const user = this.authGoogleService.getProfile();
-    console.table(token);
-    console.table(user);
-    console.log(user['picture']);
   }
 
   logout():void{
@@ -35,7 +26,7 @@ export class CalendarPage implements OnInit {
     this.authGoogleService.logout();
     this.cookieService.removeToken();
 
-    this.router.navigate(["/login"])
+    this.router.navigate(["login"])
 
 
 
