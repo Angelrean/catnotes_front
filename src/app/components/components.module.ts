@@ -1,19 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsComponent } from './forms/forms.component';
-import { FooterComponent } from './footer/footer.component';
+
 import { IonicModule } from '@ionic/angular';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { FooterComponent } from './footer/footer.component';
 
 
 
 @NgModule({
-  declarations: [FormsComponent, FooterComponent],
-  exports: [FormsComponent, FooterComponent],
+
+  declarations: [FooterComponent],
+  exports: [FooterComponent],
+
   imports: [
     CommonModule,
     IonicModule,
     ReactiveFormsModule,
+    FormsModule,
+
   ]
 })
 export class ComponentsModule { }

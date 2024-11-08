@@ -1,55 +1,74 @@
 ion-content {
-    --background: linear-gradient(180deg, rgba(17, 0, 255, 0) 0%, rgba(103, 57, 190, 0.38) 23.3%, rgba(102, 27, 241, 0.69) 61.8%, #6739BE 91.8%);
-    
-  }
+  --background: linear-gradient(180deg, rgb(10 6 60 / 94%) 0%, rgb(41 13 94 / 88%) 23.3%, rgb(35 12 78 / 69%) 61.8%, #6739BE 91.8%)
 
-  //esta es para modificar las propiedades de la card 
-  .login-card {
-    background-color: #D5C1FE;
-    border-radius: 0% 0% 0% 0%;
-    text-align: center;
-    margin-top: 0px;
-    margin-left: 0;
-    margin-right: 0;
-    color: black;
-  }
-  h1{
-    margin-top: 10px;
-    margin-bottom: 30px;
-  }
-  ion-card-header{
-    color: #000000;
-  }
+}
 
-  .container{
-    display: flex;
-    justify-content: center;
+//esta es para modificar las propiedades de la card
+.login-card {
+  background-color: #D5C1FE;
+  border-radius: 0% 0% 0% 0%;
+  text-align: center;
+  margin-top: 0px;
+  margin-left: 0;
+  margin-right: 0;
+  color: black;
+}
+h1{
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+ion-card-header{
+  color: #000000;
+}
 
-  }
-  //el card header es un div donde esta el gato con el titulo "catnotes"
-  .card-header {
-    justify-content: center;
-    text-align: center;
-    color: black;
-    margin-bottom: -100px;
-    background-color: #D5C1FE;
-    border-radius: 50%;
-    width: 262px;
-    height: 262px;
-    margin-top: 90px;    
-  }
+.container{
+  display: flex;
+  justify-content: center;
 
-  //aca estan las propiedades 'propias' de la imagen, solo lo puese para adaptar el tamaño
-  .card-header img{
-    width: 45%;
-    height: auto;
-    margin-top: 18px;
-  }
+}
+//el card header es un div donde esta el gato con el titulo "catnotes"
+.card-header {
+  justify-content: center;
+  text-align: center;
+  color: black;
+  margin-bottom: -100px;
+  background-color: #D5C1FE;
+  border-radius: 50%;
+  width: 262px;
+  height: 262px;
+  margin-top: 94px;
+}
 
-  ion-text{
-    padding: 90px;
-    color: #000000;
-  }
-  a{
-    color: #D900FF;
-  }
+//aca estan las propiedades 'propias' de la imagen, solo lo puese para adaptar el tamaño
+.card-header img{
+  width: 45%;
+  height: auto;
+  margin-top: 18px;
+}
+
+ion-input{
+border-bottom: 10px #000000;
+}
+
+ion-button{
+  --background: #D9D9D9;
+  display: flex;
+  align-self: center;
+  margin-top: 20%;
+  color: #000000;
+  padding: 20px;
+}
+ion-text{
+  padding: 90px;
+  color: #000000;
+}
+a{
+  color: #D900FF;
+}
+
+
+
+.google{
+
+  margin-top: 1rem !important;
+}
