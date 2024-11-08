@@ -10,11 +10,14 @@
       <h1>LOGIN</h1>
     </ion-card-header>
     <ion-card-content>
-      <ion-input label="Email or username"[(ngModel)]="credentials" labelPlacement="floating" type="Enter text"></ion-input>
+      <form (submit)="login()">
 
-      <ion-input label="Password" [(ngModel)]="password" labelPlacement="floating" type="password">
-      </ion-input>
-      <ion-button shape="round" (click)="login()"> login </ion-button>
+        <ion-input label="Email or username"[(ngModel)]="credentials" labelPlacement="floating" type="Enter text" [ngModelOptions]="{standalone: true}"></ion-input>
+
+        <ion-input label="Password" [(ngModel)]="password" labelPlacement="floating" type="password" [ngModelOptions]="{standalone: true}">
+        </ion-input>
+        <ion-button type="submit" shape="round"> login </ion-button>
+      </form>
 
 
 

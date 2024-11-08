@@ -20,7 +20,14 @@ export class AuthGoogleService {
 
     this.oAuthService.configure(config);
     this.oAuthService.setupAutomaticSilentRefresh();
-    this.oAuthService.loadDiscoveryDocumentAndTryLogin();
+    this.oAuthService.loadDiscoveryDocumentAndTryLogin().then(() => {
+      // Verifica si el usuario está autenticado
+      if (this.oAuthService.hasValidAccessToken()) {
+        const profile = this.getProfile();
+        console.log(profile);
+
+      }
+    });
   }
 
   login():void{

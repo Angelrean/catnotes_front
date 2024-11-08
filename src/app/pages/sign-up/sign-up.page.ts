@@ -3,6 +3,8 @@ import { AuthGoogleService } from 'src/app/services/auth-google.service';
 import { User } from '../../interfaces/user';
 import { UserService } from '../../services/user.service';
 import { AlertController } from "@ionic/angular";
+import { Router } from '@angular/router';
+import { CookieService } from '../../services/cookie.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -16,7 +18,13 @@ export class SignUpPage {
   password: string = '';
   repeatPassword: string = '';
 
-  constructor(private readonly alertController: AlertController, private readonly authGoogleService: AuthGoogleService, private readonly userService: UserService) {}
+  constructor(
+    private readonly alertController: AlertController,
+    private readonly authGoogleService: AuthGoogleService,
+    private readonly userService: UserService,
+    private readonly router: Router,
+    private readonly cookieService: CookieService
+  ) {}
 
   submit() {
     if (this.password !== this.repeatPassword) {
@@ -37,6 +45,9 @@ export class SignUpPage {
       {
         next: (resp: any) => {
           console.log('Registration successful:', resp);
+          this.cookieService.setToken(resp.token)
+          this.router.navigate(["/"])
+
           // Handle successful registration (e.g., redirect to login page)
         },
         error: (error: any) => {

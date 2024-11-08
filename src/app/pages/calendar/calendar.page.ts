@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { AuthGoogleService } from 'src/app/services/auth-google.service';
 import { CookieService } from '../../services/cookie.service';
 
@@ -17,15 +17,19 @@ export class CalendarPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    console.log("hola");
 
-    const token = this.cookieService.getToken();
-
-    console.table(token);
   }
 
   logout():void{
+
     this.authGoogleService.logout();
-    this.router.navigate(['/login']);
+    this.cookieService.removeToken();
+
+    this.router.navigate(["login"])
+
+
+
   }
 
 }

@@ -9,12 +9,16 @@ export class CookieService {
 
   constructor() { }
 
-  getToken(){
-    return Cookies.get()
+  getToken(): string{
+    return Cookies.get('auth_token') || ''
   }
 
   setToken(token: string){
     Cookies.set('auth_token', token , { expires: 365 })
 
+  }
+
+  removeToken(){
+    Cookies.remove('auth_token')
   }
 }

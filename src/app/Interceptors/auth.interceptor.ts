@@ -9,7 +9,7 @@ export class AuthInterceptor implements HttpInterceptor {
   constructor(private readonly coockieService: CookieService){}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log(request);
+
     if (!request.url.includes("google.com")) {
       const token = this.coockieService.getToken();
       if (token) {
