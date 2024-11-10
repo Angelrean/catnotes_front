@@ -6,7 +6,17 @@
 
 
 <ion-content>
-  
+
+
+
+
+  @for (day of schedule; track $index) {
+
+  <app-card-schedule [subjects]="day.subjects"></app-card-schedule>
+  }
+
+
+
+
   <app-footer></app-footer>
 </ion-content>
-

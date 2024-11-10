@@ -1,0 +1,13 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Card Title</ion-card-title>
+    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+
+    @for (subject of subjects; track $index) {
+    <app-card-subject></app-card-subject>
+    }
+  </ion-card-content>
+</ion-card>

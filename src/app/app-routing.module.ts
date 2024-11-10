@@ -13,6 +13,7 @@ const routes: Routes = [
     path: 'calendar',
     loadChildren: () => import('./pages/calendar/calendar.module').then( m => m.CalendarPageModule),
     canActivate: [AuthGuard]
+
   },
   {
     path: 'login',
@@ -24,7 +25,9 @@ const routes: Routes = [
   },
   {
     path: 'zodiac',
-    loadChildren: () => import('./pages/zodiac/zodiac.module').then( m => m.ZodiacPageModule)
+    loadChildren: () => import('./pages/zodiac/zodiac.module').then( m => m.ZodiacPageModule),
+    canActivate: [AuthGuard]
+
   },
 ];
 
