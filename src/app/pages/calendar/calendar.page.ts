@@ -31,8 +31,8 @@ export class CalendarPage implements OnInit {
     this.scheduleService.getSchedules(userId.user.id)
       .subscribe(
         resp => {
-          this.schedule = resp.schedule;
-          console.log(this.schedule);
+
+          this.schedule = resp;
         },
         error => {
           console.error(error);

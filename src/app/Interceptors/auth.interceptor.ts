@@ -10,16 +10,21 @@ export class AuthInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
+    console.log(!request.url.includes("google"));
+
     if (!request.url.includes("google.com")) {
       const token = this.coockieService.getToken();
+      console.log(token);
+
       if (token) {
         request = request.clone({
           setHeaders: {
-            Authorization: `Bearer ${token}`
+            Authorization: `${token}`
           }
         });
       }
-      // Aquí puedes realizar alguna otra acción, como mostrar un mensaje al usuario, enviar datos, etc.
+      console.log(request);
+
     }
 
     return next.handle(request);

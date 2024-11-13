@@ -8,8 +8,10 @@ export const AuthGuard: CanActivateFn = (route, state) => {
 
   const payload = cookieService.getTokenPayload();
 
+
   if (payload == '') {
-    return false
+    router.navigate(['/login']);
+    return false;
   }
 
   const isExpired = Date.now() >= payload.exp * 1000;
