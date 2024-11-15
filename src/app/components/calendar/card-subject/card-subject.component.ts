@@ -1,14 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-card-subject',
   templateUrl: './card-subject.component.html',
   styleUrls: ['./card-subject.component.scss'],
 })
-export class CardSubjectComponent  implements OnInit {
+export class CardSubjectComponent {
 
-  constructor() { }
+  isModalOpen = false;
+  subject: string = '';
+  location: string = '';
+  time: string = '';
+  startTime: string = '';
+  finishTime: string = '';
+  rememberText: string = '';
+  openModal() {
+    this.isModalOpen = true;
+    console.log("abierto")
+  }
 
-  ngOnInit() {}
+  closeModal() {
+    this.isModalOpen = false;
+    console.log("cerrado")
+  }
+
 
 }

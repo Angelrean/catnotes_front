@@ -29,6 +29,14 @@ const routes: Routes = [
     canActivate: [AuthGuard]
 
   },
+  {
+    path: 'schedule',
+    loadChildren: () => import('./pages/schedule/schedule.module').then( m => m.SchedulePageModule)
+  },
+  {
+    path: 'edit-schedule',
+    loadChildren: () => import('./pages/edit-schedule/edit-schedule.module').then( m => m.EditSchedulePageModule)
+  },
 ];
 
 @NgModule({

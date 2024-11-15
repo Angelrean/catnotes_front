@@ -1,10 +1,111 @@
-<ion-card>
-  <ion-card-header>
-    <ion-card-title>Card Title</ion-card-title>
-    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-  </ion-card-header>
 
-  <ion-card-content>
-    Here's a small text description for the card content. Nothing more, nothing less.
-  </ion-card-content>
+<ion-modal [isOpen]="isModalOpen" (didDismiss)="closeModal()">
+    <ng-template>
+    <ion-content>
+  <ion-modal [isOpen]="isModalOpen" (didDismiss)="closeModal()">
+    <ng-template>
+      <ion-content>
+        <ion-card class="custom-card">
+          <ion-item lines="none" class="custom-item">
+            <ion-label position="stacked">
+              <ion-icon name="book-outline" slot="start"></ion-icon>
+              <strong>Subject</strong>
+            </ion-label>
+            <ion-select [(ngModel)]="subject" placeholder="Select Subject">
+              <ion-select-option value="math">Math</ion-select-option>
+              <ion-select-option value="science">Science</ion-select-option>
+              <ion-select-option value="history">History</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item lines="none" class="custom-item">
+            <ion-label position="stacked">
+              <ion-icon name="location-outline" slot="start"></ion-icon>
+              <strong>Location</strong>
+            </ion-label>
+            <ion-select [(ngModel)]="location" placeholder="Select Location">
+              <ion-select-option value="classroom1">Classroom 1</ion-select-option>
+              <ion-select-option value="classroom2">Classroom 2</ion-select-option>
+              <ion-select-option value="lab">Laboratory</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+
+          <ion-item lines="none" class="custom-item">
+            <ion-label position="stacked">
+              <ion-icon name="time-outline" slot="start"></ion-icon>
+              <strong>Time</strong>
+            </ion-label>
+            <ion-select [(ngModel)]="time" placeholder="Select Time">
+              <ion-select-option value="8:00">8:00 - 9:00</ion-select-option>
+              <ion-select-option value="9:00">9:00 - 10:00</ion-select-option>
+              <ion-select-option value="10:00">10:00 - 11:00</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+
+          <ion-item lines="none" class="custom-item">
+            <ion-label position="stacked"><strong>Start</strong></ion-label>
+            <ion-input [(ngModel)]="startTime" type="time"></ion-input>
+          </ion-item>
+          
+          <ion-item lines="none" class="custom-item">
+            <ion-label position="stacked"><strong>Finish</strong></ion-label>
+            <ion-input [(ngModel)]="finishTime" type="time"></ion-input>
+          </ion-item>
+
+          <ion-item lines="none" class="custom-item">
+            <ion-label position="stacked"><strong>Remember</strong></ion-label>
+            <ion-input [(ngModel)]="rememberText" placeholder="Enter reminder"></ion-input>
+          </ion-item>
+        </ion-card>
+
+
+        <ion-button expand="block" (click)="closeModal()">Close</ion-button>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>
+    </ng-template>
+  </ion-modal>
+
+
+
+<ion-card class="custom-card" (click)="openModal()">
+  <ion-item lines="none" class="custom-item" >
+    <ion-label>
+      <ion-text><strong>Subject:</strong></ion-text>
+    </ion-label>
+    <ion-text slot="end" class="custom-text">Math</ion-text>
+    <ion-icon name="book-outline" slot="end" color="secondary"></ion-icon>
+  </ion-item>
+
+  <ion-item lines="none" class="custom-item">
+    <ion-label>
+      <ion-text><strong>Place:</strong></ion-text>
+    </ion-label>
+    <ion-text slot="end" class="custom-text">Classroom 2</ion-text>
+    <ion-icon name="locate" slot="end" color="tertiary"></ion-icon>
+  </ion-item>
+
+  <ion-item lines="none" class="custom-item">
+    <ion-label>
+      <ion-text><strong>Hour:</strong></ion-text>
+    </ion-label>
+    <ion-text slot="end" class="custom-text">8:00 - 9:00</ion-text>
+    <ion-icon name="time-outline" slot="end" color="warning"></ion-icon>
+  </ion-item>
+
+  <ion-item lines="none" class="custom-item">
+    <ion-label>
+      <ion-text><strong>Remember:</strong></ion-text>
+    </ion-label>
+    <ion-text slot="end" class="custom-text">Remember the book</ion-text>
+    <ion-icon name="bookmark-outline" slot="end" color="danger"></ion-icon>
+  </ion-item>
 </ion-card>
+
+
+
+
+
+ 
