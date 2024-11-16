@@ -7,13 +7,14 @@ import { FooterComponent } from './footer/footer.component';
 import { CardScheduleComponent } from './calendar/card-schedule/card-schedule.component';
 import { HeaderComponent } from './header/header.component';
 import { CardSubjectComponent } from './calendar/card-subject/card-subject.component';
+import { DaySelectorComponent } from './day-selector/day-selector.component';
 
 
 
 @NgModule({
 
-  declarations: [HeaderComponent, FooterComponent, CardScheduleComponent, CardSubjectComponent],
-  exports: [HeaderComponent, FooterComponent, CardScheduleComponent, CardSubjectComponent],
+  declarations: [HeaderComponent, FooterComponent, CardScheduleComponent, CardSubjectComponent, DaySelectorComponent],
+  exports: [HeaderComponent, FooterComponent, CardScheduleComponent, CardSubjectComponent, DaySelectorComponent],
 
   imports: [
     CommonModule,

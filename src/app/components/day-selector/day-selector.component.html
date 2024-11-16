@@ -1,0 +1,8 @@
+<div class="custom-item">
+  <ion-select aria-label="Select day" [(ngModel)]="initialDay" class="custom-select">
+    <ion-select-option *ngFor="let day of weekDay" [value]="day">
+      {{ day }}
+    </ion-select-option>
+  </ion-select>
+</div>
+
