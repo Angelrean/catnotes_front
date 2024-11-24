@@ -1,0 +1,30 @@
+<app-header page="Edit schedule"></app-header>
+
+
+<ion-content [fullscreen]="true">
+  <!-- Selector de días -->
+
+
+  <app-day-selector [(ngModel)]="initialDay" (initialDayChange)="selectSchedule($event)"></app-day-selector>
+
+
+  <!-- Lista de subjects -->
+  <ion-card *ngFor="let subject of subjects" (click)="openEditSubjectModal(subject)">
+    <ion-card-header>
+      <ion-card-title>{{ subject.subjectName }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Ubicación: {{ subject.location }}</p>
+      <p>Hora: {{ subject.start }} - {{ subject.end }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Botón para agregar un nuevo subject -->
+  <ion-button expand="full" (click)="openNewSubjectModal()">Nuevo Subject</ion-button>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <app-footer></app-footer>
+  </ion-toolbar>
+</ion-footer>

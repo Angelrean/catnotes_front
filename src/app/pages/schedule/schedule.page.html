@@ -1,0 +1,42 @@
+<app-header page="Schedule"></app-header>
+
+
+<ion-content [fullscreen]="true">
+  <!-- Componente para seleccionar el día -->
+  <app-day-selector [(ngModel)]="initialDay" (initialDayChange)="onDaySelected($event)"></app-day-selector>
+
+  <ion-grid class="schedule-grid">
+    <ion-row class="header-row">
+
+      <ion-col size="6" class="task-slot">Subject</ion-col>
+      <ion-col size="6" class="task-slot">Hour</ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let entry of filteredSubjects">
+
+      <ion-col size="6" class="task-slot">
+        <p>{{ entry.subject.subjectName }}</p>
+      </ion-col>
+      <ion-col size="6" class="task-slot">
+        <p>{{ entry.subject.start | date: 'HH:mm' }} - {{ entry.subject.end | date: 'HH:mm' }}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="button-container">
+    <ion-button class="custom-button" [routerLink]="['/edit-schedule']">
+      <ion-icon slot="start" name="pencil-outline"></ion-icon>
+      Edit schedule
+    </ion-button>
+    <ion-button class="custom-button">
+      <ion-icon slot="start" name="download-outline"></ion-icon>
+      Export schedule
+    </ion-button>
+
+  </div>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <app-footer></app-footer>
+  </ion-toolbar>

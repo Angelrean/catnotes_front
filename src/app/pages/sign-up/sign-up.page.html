@@ -1,0 +1,46 @@
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <div class="card-header">
+      <img src="assets/gato_nariz_morada.svg">
+    </div>
+  </div>
+  <ion-card class='login-card'>
+    <ion-card-header>
+      <h1>CatNote</h1>
+      <h1>SIGN UP</h1>
+    </ion-card-header>
+    <ion-card-content>
+      <div>
+        <ion-input [(ngModel)]="name" label="Full Name" labelPlacement="floating" type="text" required>
+        </ion-input>
+        <ion-input [(ngModel)]="username" label="Username" labelPlacement="floating" type="text" required>
+        </ion-input>
+        <ion-input [(ngModel)]="email" label="Email" labelPlacement="floating" type="email" required>
+        </ion-input>
+        <ion-input [(ngModel)]="password" label="Password" labelPlacement="floating" type="password" required>
+        </ion-input>
+        <ion-input [(ngModel)]="repeatPassword" label="Repeat Password" labelPlacement="floating" type="password" required>
+          <div *ngIf="password !== repeatPassword" class="error-message">Passwords do not match</div>
+        </ion-input>
+        <ion-button shape="round" (click)="submit()" [disabled]="password !== repeatPassword">Create Account</ion-button>
+      </div>
+
+      <ion-text>
+        <p>Do you already have an account? <a routerLink="/login">Login here</a></p>
+        <div class="pt-3">
+          <p>Or sign up with:</p>
+
+          <ion-button class="google" (click)="register()">
+            <ion-icon name="logo-google"></ion-icon>
+            Google
+          </ion-button>
+
+        </div>
+      </ion-text>
+
+
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

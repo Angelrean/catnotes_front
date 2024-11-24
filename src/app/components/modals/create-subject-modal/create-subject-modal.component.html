@@ -1,0 +1,44 @@
+<ion-modal #modal>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Crear Subject</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="closeModal()">Cerrar</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Nombre del Subject</ion-label>
+        <ion-input [(ngModel)]="subjectData.subjectName"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Ubicación</ion-label>
+        <ion-input [(ngModel)]="subjectData.location"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Inicio</ion-label>
+        <ion-datetime [(ngModel)]="subjectData.start"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Fin</ion-label>
+        <ion-datetime [(ngModel)]="subjectData.end"></ion-datetime>
+      </ion-item>
+
+      <ion-item *ngFor="let reminder of subjectData.reminders; index as i">
+        <ion-input [(ngModel)]="subjectData.reminders[i]" placeholder="Recordatorio"></ion-input>
+        <ion-button color="danger" fill="clear" (click)="removeReminder(i)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </ion-item>
+      <ion-button expand="block" fill="outline" (click)="addReminder()">Agregar Recordatorio</ion-button>
+    </ion-list>
+
+    <ion-button expand="block" (click)="createSubject()">Crear Subject</ion-button>
+  </ion-content>
+</ion-modal>

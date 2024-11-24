@@ -1,0 +1,21 @@
+<app-header page="Calendar"></app-header>
+
+
+<ion-content>
+
+
+
+
+  @for (day of schedule; track $index) {
+
+  <app-card-schedule [day]="day.day" [subjects]="day.subjects"></app-card-schedule>
+  }
+
+
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <app-footer></app-footer>
+  </ion-toolbar>
+</ion-footer>

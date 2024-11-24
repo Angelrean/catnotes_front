@@ -1,0 +1,41 @@
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <div class="card-header">
+      <img src="assets/gato_nariz_morada.svg">
+    </div>
+  </div>
+  <ion-card class='login-card'>
+    <ion-card-header>
+      <h1>CatNote</h1>
+      <h1>LOGIN</h1>
+    </ion-card-header>
+    <ion-card-content>
+      <form (submit)="login()">
+
+        <ion-input label="Email or username"[(ngModel)]="credentials" labelPlacement="floating" type="Enter text" [ngModelOptions]="{standalone: true}"></ion-input>
+
+        <ion-input label="Password" [(ngModel)]="password" labelPlacement="floating" type="password" [ngModelOptions]="{standalone: true}">
+        </ion-input>
+        <ion-button type="submit" shape="round"> login </ion-button>
+      </form>
+
+
+
+      <p>You don´t have an account?<a routerLink="/sign-up"> Sign up now</a></p>
+
+      <div>
+
+        <p >Or sign up with:</p>
+
+        <ion-button class="google" (click)="loginWithGoogle()">
+          <ion-icon name="logo-google"></ion-icon>
+          Google
+        </ion-button>
+
+      </div>
+
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

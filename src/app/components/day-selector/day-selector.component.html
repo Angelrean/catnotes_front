@@ -1,0 +1,8 @@
+<ion-item class="custom-item">
+  <ion-label>Day:</ion-label>
+  <ion-select class="custom-select" [(ngModel)]="selectedDay" (ionChange)="selectDay($event.detail.value)">
+    <ion-select-option *ngFor="let day of days" [value]="day">
+      {{ day }}
+    </ion-select-option>
+  </ion-select>
+</ion-item>

@@ -1,0 +1,26 @@
+<!-- CardSubjectComponent -->
+<ion-card (click)="openModal()" class="custom-card"> <!-- Al hacer click en el card se abre el modal -->
+  <ion-item lines="none" class="custom-item">
+    <ion-label>
+      <ion-text class="custom-text"><strong>{{ subjectList.subjectName }}</strong></ion-text>
+    </ion-label>
+    <ion-icon name="book" slot="start" color="secondary"></ion-icon>
+  </ion-item>
+
+  <ion-item lines="none" class="custom-item">
+    <ion-label>
+      <ion-text class="custom-text">{{ subjectList.location }}</ion-text>
+    </ion-label>
+    <ion-icon name="pin" slot="start" size="small" color="tertiary"></ion-icon>
+  </ion-item>
+
+  <ion-item lines="none" class="custom-item">
+    <ion-label>
+      <ion-text class="custom-text">{{ subjectList.start }} - {{ subjectList.end }}</ion-text>
+    </ion-label>
+    <ion-icon name="time" slot="start" size="small" color="tertiary"></ion-icon>
+  </ion-item>
+</ion-card>
+
+<!-- Aquí se incluye el modal -->
+<app-subject-modal></app-subject-modal>

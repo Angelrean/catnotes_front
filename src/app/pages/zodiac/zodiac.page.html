@@ -1,0 +1,40 @@
+<app-header page="Zodiac"></app-header>
+
+
+<ion-content>
+<ion-item class="ion-padding">
+    <ion-label>Select Zodiac Sign</ion-label>
+    <ion-select placeholder="Select one" [(ngModel)]="selectedSign" (ionChange)="onSignChange($event)">
+      <ion-select-option value="aries">Aries</ion-select-option>
+      <ion-select-option value="taurus">Taurus</ion-select-option>
+      <ion-select-option value="gemini">Gemini</ion-select-option>
+      <ion-select-option value="cancer">Cancer</ion-select-option>
+      <ion-select-option value="leo">Leo</ion-select-option>
+      <ion-select-option value="virgo">Virgo</ion-select-option>
+      <ion-select-option value="libra">Libra</ion-select-option>
+      <ion-select-option value="scorpio">Scorpio</ion-select-option>
+      <ion-select-option value="sagittarius">Sagittarius</ion-select-option>
+      <ion-select-option value="capricorn">Capricorn</ion-select-option>
+      <ion-select-option value="aquarius">Aquarius</ion-select-option>
+      <ion-select-option value="pisces">Pisces</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  @if(showHoroscope){
+
+    <div class="ion-padding">
+      <h2>Sign: {{ horoscope.sign }}</h2>
+      <p>Date: {{ horoscope.date }}</p>
+      <p>Your luck:</p>
+      <p>{{ horoscope.horoscope }}</p>
+    </div>
+  }@else{
+    <div >
+      <h2>{{await}}</h2>
+
+    </div>
+  }
+
+
+  <app-footer></app-footer>
+</ion-content>

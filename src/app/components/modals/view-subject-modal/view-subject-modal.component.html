@@ -1,0 +1,31 @@
+<ion-modal #modal>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Ver Subject</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="closeModal()">Cerrar</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <ion-item>
+        <ion-label>Nombre:</ion-label>
+        <ion-text>{{ subjectData.subjectName }}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label>Ubicación:</ion-label>
+        <ion-text>{{ subjectData.location }}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label>Inicio:</ion-label>
+        <ion-text>{{ subjectData.start }}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label>Fin:</ion-label>
+        <ion-text>{{ subjectData.end }}</ion-text>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-modal>

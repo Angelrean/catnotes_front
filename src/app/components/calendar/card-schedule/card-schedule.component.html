@@ -1,0 +1,11 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>{{ day }}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <div *ngFor="let subject of subjects; let i = index">
+      <app-card-subject [subjectList]="subject"></app-card-subject>
+    </div>
+  </ion-card-content>
+</ion-card>

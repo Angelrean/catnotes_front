@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      {{ subjectData.subjectId ? 'Edit Subject' : 'New Subject' }}
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <!-- Nombre del Subject -->
+    <ion-item>
+      <ion-label position="stacked">Nombre del Subject</ion-label>
+      <ion-input [(ngModel)]="subjectData.subjectName" placeholder="Nombre"></ion-input>
+    </ion-item>
+
+    <!-- Ubicación -->
+    <ion-item>
+      <ion-label position="stacked">Ubicación</ion-label>
+      <ion-input [(ngModel)]="subjectData.location" placeholder="Ubicación"></ion-input>
+    </ion-item>
+
+    <!-- Hora de inicio -->
+    <ion-item>
+      <ion-label position="stacked">Inicio</ion-label>
+      <ion-datetime
+        [(ngModel)]="subjectData.start"
+        name="start" presentation="time" display-format="HH:mm" hour-cycle="h23">
+      </ion-datetime>
+    </ion-item>
+
+    <!-- Hora de fin -->
+    <ion-item>
+      <ion-label position="stacked">Fin</ion-label>
+      <ion-datetime
+        [(ngModel)]="subjectData.end"
+        name="start" presentation="time" display-format="HH:mm" hour-cycle="h23">
+      </ion-datetime>
+    </ion-item>
+
+    <!-- Recordatorios -->
+    <ion-item *ngFor="let reminder of subjectData.reminders; index as i; trackBy: trackByIndex">
+      <ion-input
+        [value]="reminder"
+        (ionInput)="updateReminder($event, i)"
+        placeholder="Recordatorio">
+      </ion-input>
+      <ion-button color="danger" fill="clear" (click)="removeReminder(i)">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+
+
+    <ion-button expand="block" fill="outline" (click)="subjectData.reminders.push('')">Agregar Recordatorio</ion-button>
+  </ion-list>
+
+  <!-- Botón para guardar -->
+  <ion-button expand="block" (click)="saveSubject()">Guardar</ion-button>
+
+  @if (subjectData._id) {
+
+    <ion-button  expand="block" color="danger" (click)="deleteSubject()">Eliminar</ion-button>
+  }
+</ion-content>
