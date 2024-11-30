@@ -34,7 +34,8 @@
               "glob": "manifest.webmanifest",
               "input": "src",
               "output": "."
-            }
+            },
+            "src/firebase-messaging-sw.js"
           ],
             "styles": ["src/global.scss", "src/theme/variables.scss", "node_modules/bootstrap/dist/css/bootstrap.min.css"],
             "scripts": [],

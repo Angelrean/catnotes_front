@@ -8,7 +8,21 @@ export class NotificationService {
 
   constructor() { }
 
-  initializeNotifications() {
+
+
+  requestPermisions(){
+    if (Notification.permission === 'granted') {
+      this.initializeNotifications()
+    }else{
+      Notification.requestPermission()
+    }
+
+  }
+
+
+
+  initializeNotifications( ) {
+
 
     console.log('Initializing HomePage');
 
@@ -40,5 +54,23 @@ export class NotificationService {
       alert('Push action performed: ' + JSON.stringify(notification));
     });
   }
+  initializeNotificationsPWA(){
 
+  }
+
+
+
+  showLocalNotification(data:any){
+
+    if('Notification' in window && Notification.permission === 'granted'){
+      const title = data.title;
+      const body = data.body;
+      const icon = './../../assets/icon/favicon.png';
+
+      new Notification(title, {
+        body,
+        icon
+      });
+    }
+  }
 }

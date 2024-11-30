@@ -34,7 +34,6 @@ export class LoginPage implements OnInit    {
 
 
   ngOnInit(){
-    this.notificationService.initializeNotifications()
   }
 
 
@@ -51,7 +50,12 @@ export class LoginPage implements OnInit    {
       message: 'Iniciando sesión...',
       spinner: 'crescent'
     });
-
+    this.notificationService.showLocalNotification(
+      {
+        title: 'CatNotes',
+        body: 'Iniciando sesión...'
+      }
+    )
     await loading.present();
 
     this.userService.login(user)
@@ -95,6 +99,13 @@ export class LoginPage implements OnInit    {
         message: 'Autenticando con Google...',
         spinner: 'crescent'
       });
+
+      this.notificationService.showLocalNotification(
+        {
+          title: 'CatNotes',
+          body: 'Autenticando con Google...'
+        }
+      )
 
       await loading.present();
 

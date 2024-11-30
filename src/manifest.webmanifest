@@ -5,5 +5,46 @@
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
-  "start_url": "./"
+  "start_url": "./",
+  "icons": [
+    {
+      "src": "assets/icon/favicon.png",
+      "sizes": "84x104",
+      "type": "84x104",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/gato_nariz_morada.svg",
+      "sizes": "84x104",
+      "type": "image/svg",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon/icon-144x144.svg",
+      "sizes": "144x144",
+      "type": "image/svg",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/screenshots/screenshot-wide.png",
+      "sizes": "1902x872",
+      "type": "image/png",
+      "platform": "desktop",
+      "form_factor": "wide"
+    },
+    {
+      "src": "assets/screenshots/screenshot-mobile.png",
+      "sizes": "351x763",
+      "type": "image/png",
+      "platform": "mobile"
+    }
+  ]
 }

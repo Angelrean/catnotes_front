@@ -26,6 +26,7 @@ export class CalendarPage implements OnInit {
   }
 
   ngOnInit() {
+
     // Obtener todos los subjects del usuario
     this.scheduleService.getAllSubjects().subscribe(
       (resp: { subjects: any[] }) => {

@@ -19,6 +19,7 @@ import { getMessaging, provideMessaging } from '@angular/fire/messaging';
 import { environment } from 'src/environments/environment';
 
 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule,
@@ -32,7 +33,10 @@ import { environment } from 'src/environments/environment';
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })],
+    }),
+
+  ],
+
 
   exports: [
 
@@ -45,9 +49,12 @@ import { environment } from 'src/environments/environment';
     OAuthService,
     HttpClient,
   {provide: HTTP_INTERCEPTORS , useClass: AuthInterceptor, multi: true},
-  provideFirebaseApp(() => initializeApp({"projectId":"catnotes-bc632","appId":"1:364962378829:web:e05e25c6a7ca986ce85804","storageBucket":"catnotes-bc632.firebasestorage.app","apiKey":"AIzaSyBckcUhc-VqpIzYJ9bae_LYL65PZ8At2kU","authDomain":"catnotes-bc632.firebaseapp.com","messagingSenderId":"364962378829"})),
+  provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
   provideAuth(() => getAuth()),
   provideMessaging(() => getMessaging())],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule  {
+
+
+}

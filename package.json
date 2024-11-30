@@ -6,11 +6,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "testServiceWorker": "ionic build --prod && npx lite-server --baseDir='./www'"
+    "testServiceWorker": "ionic build --prod"
   },
   "private": true,
   "dependencies": {
